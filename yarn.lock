@@ -38,6 +38,13 @@
     resolve-global "1.0.0"
     yargs "^17.0.0"
 
+"@commitlint/config-conventional@^14.1.0":
+  version "14.1.0"
+  resolved "https://registry.npmmirror.com/@commitlint/config-conventional/download/@commitlint/config-conventional-14.1.0.tgz?cache=0&sync_timestamp=1635817139231&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40commitlint%2Fconfig-conventional%2Fdownload%2F%40commitlint%2Fconfig-conventional-14.1.0.tgz#29e386ef200fa72d43418153ab1c490c89024dee"
+  integrity sha1-KeOG7yAPpy1DQYFTqxxJDIkCTe4=
+  dependencies:
+    conventional-changelog-conventionalcommits "^4.3.1"
+
 "@commitlint/ensure@^14.1.0":
   version "14.1.0"
   resolved "https://registry.npmmirror.com/@commitlint/ensure/download/@commitlint/ensure-14.1.0.tgz#b58b2ffe2bc95be143ed8f188721b97df1043ba5"
@@ -595,6 +602,15 @@ conventional-changelog-angular@^5.0.11:
   integrity sha1-iWiF1juRSnDUk0tZ0v573hgysow=
   dependencies:
     compare-func "^2.0.0"
+    q "^1.5.1"
+
+conventional-changelog-conventionalcommits@^4.3.1:
+  version "4.6.1"
+  resolved "https://registry.nlark.com/conventional-changelog-conventionalcommits/download/conventional-changelog-conventionalcommits-4.6.1.tgz#f4c0921937050674e578dc7875f908351ccf4014"
+  integrity sha1-9MCSGTcFBnTleNx4dfkINRzPQBQ=
+  dependencies:
+    compare-func "^2.0.0"
+    lodash "^4.17.15"
     q "^1.5.1"
 
 conventional-commits-parser@^3.2.2:
