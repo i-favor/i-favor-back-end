@@ -1,0 +1,27 @@
+{
+  "name": "i-favor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@commitlint/cli": "^14.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.13.4",
+    "koa-body": "^4.2.0",
+    "koa-jwt": "^4.0.3",
+    "koa-router": "^10.1.1",
+    "log4js": "^6.3.0"
+  },
+  "devDependencies": {
+    "husky": "^7.0.4",
+    "lint-staged": "^12.0.1",
+    "nodemon": "^2.0.15",
+    "prettier": "2.4.1"
+  },
+  "lint-staged": {
+    "*.{js,css,md}": "prettier --write"
+  },
+  "scripts": {
+    "prepare": "husky install"
+  }
+}
