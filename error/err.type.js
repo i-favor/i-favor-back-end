@@ -9,10 +9,18 @@ module.exports = {
   },
   userNotFound: {
     code: "10003",
-    message: "未找到请求资源",
+    message: "未找到请求用户/资源",
   },
-  WrongPassWord: {
+  wrongPassWord: {
     code: "10004",
     message: "验证失败",
+  },
+  duplicateUsername: {
+    code: "10005",
+    message: "用户名已占用",
+  },
+  registerFailed: {
+    code: "10006",
+    message: "注册失败",
   },
 };

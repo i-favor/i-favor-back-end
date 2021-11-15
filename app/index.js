@@ -3,11 +3,13 @@ const app = new koa();
 const router = require("../routes/main");
 const koaBody = require("koa-body");
 const { loggerMiddleware } = require("../middlewares/log");
-const errHandle = require("../error/errorHandle");
+const errHandle = require("../utils/errorHandle");
 const { privateKey: secret } = require("../config/config.secret");
 const koaJwt = require("koa-jwt");
 
-const jwtMiddleware = koaJwt({ secret }).unless({ path: [/^\/user\/login$/] });
+const jwtMiddleware = koaJwt({ secret }).unless({
+  path: [/^\/user\/(login|register)$/],
+});
 
 app.on("error", errHandle);
 

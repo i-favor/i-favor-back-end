@@ -5,13 +5,16 @@
   "license": "MIT",
   "dependencies": {
     "@commitlint/cli": "^14.1.0",
+    "bcrypt": "^5.0.1",
+    "bookmark-file-parser": "^1.0.6",
     "dotenv": "^10.0.0",
     "jsonwebtoken": "^8.5.1",
     "koa": "^2.13.4",
     "koa-body": "^4.2.0",
     "koa-jwt": "^4.0.3",
     "koa-router": "^10.1.1",
-    "log4js": "^6.3.0"
+    "log4js": "^6.3.0",
+    "mongoose": "^6.0.12"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^14.1.0",

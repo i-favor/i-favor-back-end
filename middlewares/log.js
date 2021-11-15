@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const log4js = require("log4js");
-const { logTemplate } = require(path.join(__dirname, "../config"));
+const { logTemplate } = require("../config");
 
 const logsDir = path.parse(logTemplate).dir;
 // ?如果不存在logPath指定的文件夹，则主动创建

@@ -10,8 +10,11 @@ module.exports = function (err, ctx) {
     case "10003":
       status = 404;
       break;
-    case "10004":
+    case "10004" || "10005":
       status = 403;
+      break;
+    case "10006":
+      status = 500;
       break;
   }
   ctx.status = status;
