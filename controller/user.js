@@ -8,7 +8,7 @@ const {
   registerFailed,
   userNotFound,
   wrongPassWord,
-} = require("../error/err.type");
+} = require("../constants/err.type");
 const User = require("../model/user");
 exports.login = async (ctx) => {
   const { username, password } = ctx.request.body;
@@ -29,7 +29,7 @@ exports.login = async (ctx) => {
       message: "登录成功",
       data: {
         username: userInfo.username,
-        token: generateJWT({ username, password }),
+        token: generateJWT({ _id: userInfo._id }),
       },
     });
   } else {
@@ -56,13 +56,14 @@ exports.register = async (ctx) => {
     })
       .save()
       .then((data) => {
-        const { username, password } = data;
+        console.log(data);
+        const { username, _id } = data;
         ctx.body = {
           code: "20002",
           message: "注册成功",
           data: {
             username: username,
-            token: generateJWT({ username, password }),
+            token: generateJWT({ _id }),
           },
         };
       })
@@ -76,11 +77,13 @@ exports.register = async (ctx) => {
 
 exports.userInfo = async (ctx) => {
   if (ctx.headers.authorization) {
-    ctx.body = {
+    const data = await getJWTPayload(ctx.headers.authorization);
+    console.log(data);
+    return (ctx.body = {
       code: "20002",
       message: "信息获取成功",
-      data: getJWTPayload(ctx.headers.authorization),
-    };
+      data,
+    });
   }
   return ctx.app.emit("error", userNotHaveToken, ctx);
 };

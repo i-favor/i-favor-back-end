@@ -23,4 +23,16 @@ module.exports = {
     code: "10006",
     message: "注册失败",
   },
+  noFileAttached: {
+    code: "10007",
+    message: "未上传文件/上传文件字段错误",
+  },
+  fileParsedError: {
+    code: "10008",
+    message: "文件解析失败",
+  },
+  typeError: {
+    code: "10009",
+    message: "字段类型错误",
+  },
 };

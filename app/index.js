@@ -14,7 +14,14 @@ const jwtMiddleware = koaJwt({ secret }).unless({
 app.on("error", errHandle);
 
 app.use(loggerMiddleware);
-app.use(koaBody());
+app.use(
+  koaBody({
+    multipart: true,
+    formidable: {
+      maxFileSize: 200 * 1024 * 1024,
+    },
+  })
+);
 
 app.use(router.allowedMethods());
 app.use(jwtMiddleware);
