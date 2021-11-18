@@ -1,2 +1,7 @@
 const { parseByString } = require("bookmark-file-parser");
-module.exports = (str) => parseByString(str);
+const { attach } = require("./../utils");
+module.exports = (str) => {
+  let parsed = parseByString(str);
+  attach(parsed);
+  return parsed;
+};

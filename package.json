@@ -14,7 +14,8 @@
     "koa-jwt": "^4.0.3",
     "koa-router": "^10.1.1",
     "log4js": "^6.3.0",
-    "mongoose": "^6.0.12"
+    "mongoose": "^6.0.12",
+    "nanoid": "^3.1.30"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^14.1.0",

@@ -1,5 +1,6 @@
 const fs = require("fs");
 const User = require("./../model/user");
+const { attach } = require("./../utils");
 const bookMarkParse = require("../utils/bookmarkParse");
 const {
   noFileAttached,
@@ -69,6 +70,7 @@ exports.update = async (ctx) => {
   if (!bookmark) return ctx.app.emit("error", fieldMissing, ctx);
 
   if (checkFavorValid(bookmark)) {
+    attach(bookmark);
     const updateRes = await User.updateFavor({ _id, favor: bookmark });
     const realBookmark = await User.queryFavor(_id);
     if (updateRes.modifiedCount) {
